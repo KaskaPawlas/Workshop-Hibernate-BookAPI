@@ -13,6 +13,7 @@
 </head>
 <body>
 <form:form modelAttribute="book">
+    <form:hidden path="id"/>
     ISBN: <form:input path="isbn"/>
     Title: <form:input path="title"/>
     Author: <form:input path="author"/>
