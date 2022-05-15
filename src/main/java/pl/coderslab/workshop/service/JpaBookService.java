@@ -1,15 +1,14 @@
 package pl.coderslab.workshop.service;
 
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 import pl.coderslab.workshop.model.Book;
 import pl.coderslab.workshop.repository.BookRepository;
 
+import javax.persistence.EntityNotFoundException;
 import java.util.List;
 
 @Service
-@Primary
 public class JpaBookService implements BookService{
 
     private final BookRepository bookRepository;
@@ -20,7 +19,7 @@ public class JpaBookService implements BookService{
 
     @Override
     public Book getBookById(Long id) {
-        return bookRepository.getOne(id);
+        return bookRepository.findById(id).orElseThrow(EntityNotFoundException::new);
     }
 
     @Override

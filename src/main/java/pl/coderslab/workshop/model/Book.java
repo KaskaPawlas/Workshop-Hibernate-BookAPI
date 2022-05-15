@@ -6,7 +6,6 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "books")
-@Proxy(lazy = false)
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
