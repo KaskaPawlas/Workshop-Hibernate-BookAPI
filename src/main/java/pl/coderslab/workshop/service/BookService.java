@@ -8,7 +8,7 @@ public interface BookService {
 
     Book getBookById(Long id);
 
-    Book addBook(Book bookToAdd);
+    void addBook(Book bookToAdd);
 
     void editBook(Book bookToEdit);
 

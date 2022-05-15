@@ -1,6 +1,15 @@
 package pl.coderslab.workshop.model;
 
+import org.hibernate.annotations.Proxy;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "books")
+@Proxy(lazy = false)
 public class Book {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String isbn;
     private String title;
