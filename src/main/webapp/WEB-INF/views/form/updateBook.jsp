@@ -1,4 +1,5 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: katarzyna
@@ -12,7 +13,8 @@
     <title>Update book</title>
 </head>
 <body>
-<form:form modelAttribute="book">
+<c:url var="edit_url" value="/admin/books/edit"/>
+<form:form modelAttribute="book" action="${edit_url}">
     <form:hidden path="id"/>
     ISBN: <form:input path="isbn"/>
     Title: <form:input path="title"/>

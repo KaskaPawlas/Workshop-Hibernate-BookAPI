@@ -13,7 +13,7 @@ public class JpaBookService implements BookService{
 
     private final BookRepository bookRepository;
 
-    public JpaBookService(@Qualifier("jpaRepository") BookRepository bookRepository) {
+    public JpaBookService(BookRepository bookRepository) {
         this.bookRepository = bookRepository;
     }
 
